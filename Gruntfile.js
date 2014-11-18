@@ -34,6 +34,10 @@ module.exports = function (grunt) {
         files: ['bower.json'],
         tasks: ['wiredep']
       },
+      less: {
+        files: ['<%= config.app %>/styles/{,*/}*.less'],
+        tasks: ['less:server', 'autoprefixer']
+      },
       js: {
         files: ['<%= config.app %>/scripts/{,*/}*.js'],
         tasks: ['jshint'],
@@ -52,14 +56,19 @@ module.exports = function (grunt) {
         files: ['<%= config.app %>/styles/{,*/}*.css'],
         tasks: ['newer:copy:styles', 'autoprefixer']
       },
+      jade: {
+        files: ['<%= config.app %>/{,*/}*.jade'],
+        tasks: ['jade']
+      },
       livereload: {
         options: {
           livereload: '<%= connect.options.livereload %>'
         },
         files: [
-          '<%= config.app %>/{,*/}*.html',
-          '.tmp/styles/{,*/}*.css',
-          '<%= config.app %>/images/{,*/}*'
+          '.tmp/{,*/}*.html',
+          '{.tmp,<%= config.app %>}/styles/{,*/}*.css',
+          '{.tmp,<%= config.app %>}/scripts/{,*/}*.js',
+          '<%= config.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}'
         ]
       }
     },
@@ -161,12 +170,46 @@ module.exports = function (grunt) {
     },
 
     // Automatically inject Bower components into the HTML file
+
+
+
     wiredep: {
-      app: {
-        ignorePath: /^\/|\.\.\//,
-        src: ['<%= config.app %>/index.html'],
-        exclude: ['bower_components/bootstrap/dist/js/bootstrap.js']
-      }
+      // app: {
+      //   ignorePath: /^\/|\.\.\//,
+      //   src: ['<%= config.app %>/layout/general-layout.jade'],
+      // },
+
+      less: {
+        src: ['<%= config.app %>{,*/}*.less'],
+        ignorePath: /(\.\.\/){1,2}bower_components\//,
+        block: /(([ \t]*)\/\/\s*bower:*(\S*))(\n|\r|.)*?(\/\/\s*endbower)/gi,
+        detect: {
+          css: /@import\s['"](.+css)['"]/gi,
+          less: /@import\s['"](.+less)['"]/gi
+        },
+        replace: {
+          css: '@import "{{filePath}}";',
+          less: '@import "{{filePath}}";'
+        }
+      },
+      jade: {
+        ignorePath: /^(\/|\.+(?!\/[^\.]))+\.+/,
+        src: ['<%= config.app %>/{,*/}*.jade'],
+        block: /(([ \t]*)\/\/\s*bower:*(\S*))(\n|\r|.)*?(\/\/\s*endbower)/gi,
+        detect: {
+          js: /script\(.*src=['"]([^'"]+)/gi,
+          css: /link\(.*href=['"]([^'"]+)/gi
+        },
+        replace: {
+          js: 'script(src=\'{{filePath}}\')',
+          css: 'link(rel=\'stylesheet\', href=\'{{filePath}}\')'
+        },
+        exclude: [
+          'bower_components/bootstrap/dist/js/bootstrap.js',
+          'bootstrap'
+        ]
+      },
+
     },
 
     // Renames files for browser caching purposes
@@ -189,9 +232,9 @@ module.exports = function (grunt) {
     // additional tasks can operate on them
     useminPrepare: {
       options: {
-        dest: '<%= config.dist %>'
+          dest: '<%= config.dist %>'
       },
-      html: '<%= config.app %>/index.html'
+      html: '.tmp/index.html',
     },
 
     // Performs rewrites based on rev and the useminPrepare configuration
@@ -245,10 +288,43 @@ module.exports = function (grunt) {
         },
         files: [{
           expand: true,
-          cwd: '<%= config.dist %>',
+          cwd: '.tmp',
           src: '{,*/}*.html',
           dest: '<%= config.dist %>'
         }]
+      }
+    },
+    less: {
+      options: {
+        paths: ['./bower_components/'],
+      },
+      dist: {
+        options: {
+          cleancss: true,
+          report: 'gzip'
+        },
+        files: [{
+          expand: true,
+          cwd: '<%= config.app %>/styles',
+          src: '*.less',
+          dest: '.tmp/styles',
+          ext: '.css'
+        }]
+      },
+      server: {
+        options: {
+          sourceMap: true,
+          sourceMapBasepath: '<%= config.app %>/',
+          sourceMapRootpath: '../'
+        },
+        files: {
+          // expand: true,
+          // cwd: '<%= config.app %>/styles',
+          // src: '*.less',
+          // dest: '.tmp/styles',
+          // ext: '.css'
+          '<%= config.app %>/styles/style.css': '<%= config.app %>/styles/style.less'
+        }
       }
     },
 
@@ -315,16 +391,34 @@ module.exports = function (grunt) {
     // Run some tasks in parallel to speed up build process
     concurrent: {
       server: [
+        'less:server',
         'copy:styles'
       ],
       test: [
         'copy:styles'
       ],
       dist: [
+        'less:dist',
         'copy:styles',
         'imagemin',
         'svgmin'
       ]
+    },
+
+    // Jade task here
+    jade: {
+      dist: {
+        options: {
+            pretty: true
+        },
+        files: [{
+            expand: true,
+            cwd: '<%= config.app %>',
+            dest: '.tmp',
+            src: '*.jade',
+            ext: '.html'
+        }]
+      }
     }
   });
 
@@ -334,7 +428,7 @@ module.exports = function (grunt) {
       grunt.config.set('connect.options.hostname', '0.0.0.0');
     }
     if (target === 'dist') {
-      return grunt.task.run(['build', 'connect:dist:keepalive']);
+      return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
     }
 
     grunt.task.run([
@@ -342,6 +436,7 @@ module.exports = function (grunt) {
       'wiredep',
       'concurrent:server',
       'autoprefixer',
+      'jade',
       'connect:livereload',
       'watch'
     ]);
@@ -370,6 +465,7 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'clean:dist',
     'wiredep',
+    'jade',
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',

@@ -1,0 +1,152 @@
+extends ./layout/general-layout.jade
+
+block content
+  .container
+    .header
+      .community-profile
+        a.profile-picture(href="#")
+          img.img-thumbnail(src='images/akibanation-logo-125x125.jpg')
+        .profile-name
+          h3 Akibanation Surabaya
+      .top-navbar
+        ul.nav.nav-pills.pull-right
+          li.active
+            a(href="#") about
+          li
+            a(href="#") dashboard
+          li
+            a(href="#") calendar
+          li
+            a(href="#") media
+          li
+            a(href="#") member
+          li
+            a(href="#") blog
+  .row
+    .col-xs-12
+      .top-slider
+        img.img-responsive(src='images/slider-1.jpg')
+  .container
+    .row
+      .col-xs-12
+        br
+        h3 Community Information
+        p An official Wakuwakuw Developer Community.
+          | If you have any question, contact us on developers@mataharilabs.com
+        .text-center
+          iframe(width="600" height="380" src="//www.youtube-nocookie.com/embed/9tDNI6dWLGc?rel=0" frameborder="0" allowfullscreen)
+        p Vestibulum nec laoreet mi. Donec ullamcorper blandit
+          | lacus vitae condimentum. Integer eget mi sit amet massa
+          | tempus dignissim. Ut a egestas dolor. Phasellus eros tortor,
+          | dignissim sed faucibus vel, scelerisque sit amet ipsum.
+          | Nam vehicula, justo at pharetra scelerisque, metus neque
+          | pulvinar massa, eu feugiat orci tellus ac tellus.
+          | Suspendisse potenti. Mauris laoreet urna quis quam
+          | ullamcorper nec facilisis metus egestas. Mauris sem diam,
+          | fermentum nec rhoncus sit amet, sollicitudin ut nibh.
+          | Cum sociis natoque penatibus et magnis dis parturient
+          | montes, nascetur ridiculus mus. Proin metus sem, molestie
+          | sed sollicitudin imperdiet, tincidunt vitae tortor. Cras
+          | auctor elementum placerat. Phasellus ornare risus sed neque
+          |rutrum non porta nulla aliquam. Aliquam erat volutpat.
+        p Official Wakuwakuw FB Page : 
+          a(href="fb.com/waku2w") facebook.com/waku2w
+        p Check out our Blog :
+          br
+          a(href="blog.wakuwakuw.com") blog.wakuwakuw.com
+  hr
+  .container
+    br
+    .row
+      .col-xs-1
+      .col-xs-10
+        .shoutout-block
+          .row
+            .col-xs-8
+              h2 Be a part of this community?
+            .col-xs-4
+              button.btn.btn-primary-accent.btn-lg.btn-block(type="button") Join now!
+      .col-xs-1
+  hr
+  .container
+    .row
+      .col-xs-12
+        h3 Why you should join with us?
+        p Vestibulum nec laoreet mi. Donec ullamcorper blandit lacus
+          | vitae condimentum. Integer eget mi sit amet massa tempus
+          | dignissim. Ut a egestas dolor. Phasellus eros tortor,
+          | dignissim sed faucibus vel, scelerisque sit amet ipsum.
+          | Nam vehicula, justo at pharetra scelerisque, metus neque
+          | pulvinar massa, eu feugiat orci tellus ac tellus.
+        ul
+          li Proin id dolor lacus, vel pharetra velit.
+          li Praesent gravida ligula vitae metus elementum vel egestas odio tristique.
+          li Duis eleifend fringilla tellus, eget luctus magna consequat eget.
+        br
+  .container.container-dark
+    br
+    .row
+      .col-xs-8
+        h3 Latest Photo
+        .collage-media
+          a(href="#")
+            img(src="holder.js/300x170/sky")
+          a(href="#")
+            img(src="holder.js/245x170/sky")
+          a(href="#")
+            img(src="holder.js/245x170/sky")
+          a(href="#")
+            img(src="holder.js/300x170/sky")
+        button.btn.btn-primary-accent.text-center(type="button") View all photos
+        .member-summary
+          h3 Members
+          ul.list-inline
+            li.text-center: a(href="#")
+              img.img-circle.img-thumbnail(src="holder.js/97x97")
+              br
+              | Jon Arryn
+            li.text-center: a(href="#")
+              img.img-circle.img-thumbnail(src="holder.js/97x97")
+              br
+              | Catelyn Starks
+            li.text-center: a(href="#")
+              img.img-circle.img-thumbnail(src="holder.js/97x97")
+              br
+              | Joffrey Baratheon
+            li.text-center: a(href="#")
+              img.img-circle.img-thumbnail(src="holder.js/97x97")
+              br
+              | Theon Greyjoy
+            li.text-center: a(href="#")
+              img.img-circle.img-thumbnail(src="holder.js/97x97")
+              br
+              | Theon Greyjoy
+      .col-xs-4
+        .thumbnail
+          h3 Info
+  .container.container-darker
+    .row
+      .col-xs-6.text-center
+        h2 Akibanation
+        P  Be a part of this commuinty?
+        button.btn.btn-primary-accent(type="button") Join now!
+      .col-xs-6
+        h3 Latest Blog
+        ul
+          li.footer-blog-summary: a(href="#")
+            .blog-summary-heading
+              p We have new gossip
+                br
+                span.blog-summary-timestamp 0 22 November 2014 by 
+                  strong Admin
+            p Morbi metus magna, mattis at male suada eget, tempor id urna.
+              | Suspendisse potenti. Cras at nisi interdum neque tincidunt
+              | pellentesque. Aenean porta molestie quam ...
+          li.footer-blog-summary: a(href="#")
+            .blog-summary-heading
+              p Akibanation goes to europe! yay...
+                br
+                span.blog-summary-timestamp 0 23 July 2014 by 
+                  strong Admin
+
+

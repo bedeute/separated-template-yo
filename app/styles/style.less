@@ -1,0 +1,147 @@
+// bower:less
+@import "bootstrap/less/bootstrap.less";
+// endbower
+@import "buttons-edit.less";
+
+
+// custom variable
+@btn-primary-accent-bg:          #c40416;
+@btn-primary-accent-color:       #fff;
+@btn-primary-accent-border:      #f23d4e;
+
+@media (min-width: 768px) {
+  .container,
+  .wrapper {
+    width: 750px;
+  }
+  
+}
+
+@media (min-width: 992px) {
+  .container,
+  .wrapper {
+    width: 960px;
+  }
+  
+}
+
+// @media (min-width: 1200px) {
+//   .container,
+//   .wrapper {
+//     width: 960px;
+//   }
+  
+// }
+
+body {
+  padding-top: 90px;
+  padding-bottom: 90px;
+  background-color: #f9f9f9;
+  line-height: 28px;
+  color: #555;
+}
+
+.wrapper {
+  .box-shadow(0 0 15px rgba(0, 0, 0, 0.2));
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff;
+
+  & > .container {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+
+.header {
+  position: relative;
+  height: 95px;
+}
+
+.community-profile {
+  position: absolute;
+  bottom: 20%;
+
+  &:extend(.clarfix all);
+}
+
+.profile-picture {
+  display: block;
+  margin-right: 20px;
+  height: 135px;
+  width: 135px;
+
+  &:extend(.pull-left);
+}
+
+.profile-name {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+
+  &:extend(.pull-left);
+}
+
+.top-navbar {
+  padding-top: 26px;
+  padding-right: 20px;
+  margin-left: 200px;
+}
+
+.top-slider {
+  // margin-left: -15px;
+}
+
+.shoutout-block {
+  background-color: #292c37;
+  padding: 36px;
+  border-radius: 6px;
+
+  & h2 {
+    font-weight: 100;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  & .btn-primary-accent {
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+}
+
+.container-dark {
+  background-color: #292c37;
+
+  & .thumbnail {
+    background-color: #303340;
+    border-color: #1e212c;
+  }
+
+  &er {
+    background-color: #151820;
+  }
+}
+
+footer {
+  background-color: #0d0f15;
+}
+
+.collage-media {
+
+  & a {
+    display: block;
+    border-radius: 4px;
+    border: 1px solid #44485b;
+    .box-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+    float: left;
+    margin-left: 10px;
+    margin-bottom: 10px;
+
+    &:nth-child(2n+1) {
+      margin-left: 0;
+    }
+  }
+
+  &:extend(.clearfix all);
+}
