@@ -323,7 +323,7 @@ module.exports = function (grunt) {
           // src: '*.less',
           // dest: '.tmp/styles',
           // ext: '.css'
-          '<%= config.app %>/styles/style.css': '<%= config.app %>/styles/style.less'
+          '.tmp/styles/style.css': '<%= config.app %>/styles/style.less'
         }
       }
     },
@@ -385,6 +385,13 @@ module.exports = function (grunt) {
         cwd: '<%= config.app %>/styles',
         dest: '.tmp/styles/',
         src: '{,*/}*.css'
+      },
+      fonts: {
+        expand: true,
+        dot: true,
+        cwd: 'bower_components/bootstrap/dist',
+        src: 'fonts/*',
+        dest: '<%= config.app %>'
       }
     },
 
@@ -392,7 +399,8 @@ module.exports = function (grunt) {
     concurrent: {
       server: [
         'less:server',
-        'copy:styles'
+        'copy:styles',
+        'copy:fonts'
       ],
       test: [
         'copy:styles'
