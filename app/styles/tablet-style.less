@@ -1,0 +1,42 @@
+// style for tablet devices
+
+@media (min-width: @screen-md) {
+	.container,
+	.wrapper {
+	    width: 960px !important;
+	}
+}
+
+@media (max-width: @screen-md) {
+	.media-preview {
+
+	  & a {
+	    &:nth-child(3n+1) {
+	      margin-left: 10px;
+	    }
+
+	    &:nth-child(2n+1) {
+	      margin-left: 0;
+	    }
+	  }
+	}
+}
+
+@media (max-width: @grid-float-breakpoint-max) {
+
+	.wrapper {max-width: 970px;}
+
+	.top-navbar {
+	    background-color: @navbar-default-bg;
+	    border-color: @navbar-default-border;
+	    top: 22px;
+	}
+
+	.shoutout-block {
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	
+
+}

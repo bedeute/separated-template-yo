@@ -304,11 +304,12 @@ module.exports = function (grunt) {
           report: 'gzip'
         },
         files: [{
-          expand: true,
-          cwd: '<%= config.app %>/styles',
-          src: '*.less',
-          dest: '.tmp/styles',
-          ext: '.css'
+          // expand: true,
+          // cwd: '<%= config.app %>/styles',
+          // src: '*.less',
+          // dest: '.tmp/styles',
+          // ext: '.css'
+          '<%= config.dist %>/styles/style.css': '<%= config.app %>/styles/style.less'
         }]
       },
       server: {

@@ -1,0 +1,94 @@
+@media (min-width: @screen-xs) {
+	.container,
+	.wrapper {
+	    width: 750px !important;
+	}
+}
+
+
+@media (max-width: @screen-xs) {
+
+	body {
+		padding-top: 180px;
+	}
+
+	.wrapper > .container {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+
+	.community-profile {
+		bottom: 100%
+	}
+
+	.profile-picture {
+		float: none;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.profile-name {
+		float: none;
+	}
+
+	.top-navbar {
+		margin-left: 0;
+		
+	}
+
+	.shoutout-block {
+
+		& h2 {
+			font-size: 26px;
+		}
+	}
+
+	.community-info {
+		margin-top: 100px;
+	}
+
+	.media-preview {
+		text-align: center;
+
+		a {
+			margin-left: 0;
+			display: inline-block;
+			float: none;
+
+			&:nth-child(n+4) {
+				display: none;
+			}
+
+		}
+	}
+
+	.member-summary {
+
+		& > ul {
+			text-align: center;
+		}
+	}
+
+	.footer-nav,
+	.footer-logo > a {
+		.text-center();
+		float: none;
+		display: block;
+	}
+
+	.footer-logo {
+		border-top: 1px solid #292c37;
+		padding-top: 8px;
+		padding-bottom: 10px;
+	}
+
+	.footer-shoutout {
+		padding-bottom: 30px;
+		margin-bottom: 8px;
+		border-bottom: 1px solid #292c37;
+	}
+
+	.footer-blog-summary:last-child {
+		padding-bottom: 20px;
+	}
+}

@@ -24,32 +24,11 @@ block content
             li: a(href="#") media
             li: a(href="#") member
             li: a(href="#") blog
-
-      //- nav.top-navbar(role="navigation")
-      //-   .navbar-header
-      //-     button.navbar-toggle(data-toggle="collapse", data-target="#top-nav-collapse")
-      //-       span.sr-only Toggle Navigation
-      //-       span.icon-bar
-      //-       span.icon-bar
-      //-       span.icon-bar
-      //-   #top-nav-collapse.collapse.navbar-collapse
-      //-     ul.nav.navbar-nav
-      //-       li.active
-      //-         a(href="#") about
-      //-       li
-      //-         a(href="#") dashboard
-      //-       li
-      //-         a(href="#") calendar
-      //-       li
-      //-         a(href="#") media
-      //-       li
-      //-         a(href="#") member
-      //-       li
-      //-         a(href="#") blog
-  .row
-    .col-xs-12
-      .top-slider
-        img.img-responsive(src='images/slider-1.jpg')
+  .top-slider
+    //- .row
+    //-   .col-xs-12
+    img.img-responsive(src='images/slider-1.jpg')
+            
   .container
     .row
       .col-xs-12
@@ -58,7 +37,7 @@ block content
         p An official Wakuwakuw Developer Community.
           | If you have any question, contact us on developers@mataharilabs.com
         .text-center.stream-block
-          iframe(width="600" height="380" src="//www.youtube-nocookie.com/embed/9tDNI6dWLGc?rel=0" frameborder="0" allowfullscreen)
+          iframe(width="600" height="220" src="//www.youtube-nocookie.com/embed/9tDNI6dWLGc?rel=0" frameborder="0" allowfullscreen)
         p Vestibulum nec laoreet mi. Donec ullamcorper blandit
           | lacus vitae condimentum. Integer eget mi sit amet massa
           | tempus dignissim. Ut a egestas dolor. Phasellus eros tortor,
@@ -82,9 +61,9 @@ block content
   .container
     .shoutout-block
       .row
-        .col-xs-8
+        .col-xs-12.col-sm-8
           h2 Be a part of this community?
-        .col-xs-4
+        .col-xs-12.col-sm-4
             button.btn.btn-primary-accent.btn-lg.btn-block(type="button") Join now!
   hr
   .container
@@ -105,20 +84,24 @@ block content
   .container.container-dark
     br
     .row
-      .col-xs-8
+      .col-xs-12.col-sm-7.col-md-8
         h3 Latest Photo
-        .collage-media
+        .media-preview
           a(href="#")
-            img(src="holder.js/300x170/sky")
+            img(src="holder.js/180x160/sky")
           a(href="#")
-            img(src="holder.js/245x170/sky")
+            img(src="holder.js/180x160/sky")
           a(href="#")
-            img(src="holder.js/245x170/sky")
+            img(src="holder.js/180x160/sky")
           a(href="#")
-            img(src="holder.js/300x170/sky")
+            img(src="holder.js/180x160/sky")
+          a(href="#")
+            img(src="holder.js/180x160/sky")
+          a(href="#")
+            img(src="holder.js/180x160/sky")
         .text-center
           button.btn.btn-primary-accent.text-center(type="button") View all photos
-        .member-summary
+        .hidden-xs.member-summary
           h3 Members
           ul.list-inline
             li.text-center: a(href="#")
@@ -141,7 +124,7 @@ block content
               img.img-circle.img-member-button(src="holder.js/97x97")
               br
               strong View all member
-      .col-xs-4
+      .col-xs-12.col-sm-5.col-md-4
         .thumbnail.community-info
           img.img-circle.img-thumbnail.community-creator-pic(src="holder.js/97x97/#c40416:c40416")
           .text-center.community-creator-text Creator:
@@ -183,16 +166,40 @@ block content
                 | &nbsp;7.30 pm by&nbsp;
                 strong Jakarta Great Event
               h4 Gramedia School Holiday Fair 2013
+      .col-xs-12
+        .hidden-sm.hidden-md.hidden-lg.member-summary
+          h3 Members
+          ul.list-inline
+            li.text-center: a(href="#")
+              img.img-circle.img-thumbnail(src="holder.js/97x97")
+              br
+              | Jon Arryn
+            li.text-center: a(href="#")
+              img.img-circle.img-thumbnail(src="holder.js/97x97")
+              br
+              | Catelyn Starks
+            li.text-center: a(href="#")
+              img.img-circle.img-thumbnail(src="holder.js/97x97")
+              br
+              | Joffrey Baratheon
+            li.text-center: a(href="#")
+              img.img-circle.img-thumbnail(src="holder.js/97x97")
+              br
+              | Theon Greyjoy
+            li.text-center: a(href="#")
+              img.img-circle.img-member-button(src="holder.js/97x97")
+              br
+              strong View all member
   .container.container-darker
     .row
-      .col-xs-5.text-center.footer-shoutout
+      .col-xs-12.col-sm-5.text-center.footer-shoutout
         h2 Akibanation
         P.text-plain  Be a part of this commuinty?
         button.btn.btn-primary-accent(type="button") Join now!
-      .col-xs-7
+      .col-xs-12.col-sm-7.footer-blog-summary
         h3 Latest Blog
         ul.list-unstyled
-          li.footer-blog-summary: a(href="#")
+          li: a(href="#")
             .blog-summary-heading 
               h4 We have new gossip? Guess what...
               p.blog-summary-timestamp
@@ -202,7 +209,7 @@ block content
             | Morbi metus magna, mattis at male suada eget, tempor id urna.
             | Suspendisse potenti. Cras at nisi interdum neque tincidunt
             | pellentesque. Aenean porta molestie quam ...
-          li.footer-blog-summary: a(href="#")
+          li: a(href="#")
             .blog-summary-heading 
               h4 Akibanation goes to europe! yay...
               p.blog-summary-timestamp
