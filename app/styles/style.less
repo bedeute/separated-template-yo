@@ -201,6 +201,7 @@ body {
 .community-profile {
   position: absolute;
   bottom: 20%;
+  width: 100%;
 
   &:extend(.clarfix all);
 }
@@ -214,13 +215,12 @@ body {
 }
 
 .profile-name {
+  float: left;
 
   & > h3 {
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
   }
-
-  &:extend(.pull-left);
 }
 
 .top-slider {
@@ -454,6 +454,39 @@ footer {
   & > a {
     float: right;
   }
+}
+
+// blog sytle
+// -------------------------------------
+
+.blog-page {
+  line-height: 20px;
+}
+
+.blog-list {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+
+  &:extend(.clearfix all);
+}
+
+.blog-timestamp {
+  padding-top: 4px;
+  padding-bottom: 8px;
+}
+
+.img-blog-thumbnail {
+  margin-right: 20px;
+}
+
+.blog-rightbar {
+  border-left: 1px solid #ccc;
+}
+
+.subheading {
+  border-bottom: 1px dashed #ddd;
+  display: block;
 }
 
 @import "tablet-style.less";

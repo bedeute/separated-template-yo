@@ -1,0 +1,23 @@
+.container
+    .header
+      .community-profile
+        a.profile-picture(href="#")
+          img.img-thumbnail(src='images/akibanation-logo-125x125.jpg')
+        .profile-name
+          h3 Akibanation Surabaya
+      nav.navbar.top-navbar(role="navigation")
+        .navbar-header
+          button.navbar-toggle(data-toggle="collapse", data-target="#top-navbar-collapse")
+            span.sr-only Toggle Navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(data-toggle="collapse", data-target="#top-navbar-collapse") Menu
+        #top-navbar-collapse.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li.active: a(href="#") about
+            li: a(href="#") dashboard
+            li: a(href="#") calendar
+            li: a(href="#") media
+            li: a(href="#") member
+            li: a(href="blog.html") blog

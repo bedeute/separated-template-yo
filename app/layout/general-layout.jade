@@ -2,7 +2,7 @@ doctype html
 html.no-js
   head
     meta(charset="utf-8")
-    title yo project
+    title Grouphub Theme
     meta(name="description", content="")
     meta(name="viewport", content="width=device-width")
     link(rel="shortcut icon", href="/favicon.ico")
@@ -24,6 +24,7 @@ html.no-js
         a(href="http://browsehappy.com/") upgrade your browser
         | to improve your experience.
     .wrapper
+      include ../include/top-navbar.jade
       block content
       block footer
         footer.container
@@ -52,6 +53,8 @@ html.no-js
     script(src='/bower_components/holderjs/holder.js')
     // endbower
     // endbuild
+    // usemin cannot update path. here's the tweak
+    script(src="scripts/vendor.js")
     // Google Analytics: change UA-XXXXX-X to be your site's ID.
     script(type='text/javascript').
       (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
@@ -60,7 +63,7 @@ html.no-js
       e.src='//www.google-analytics.com/analytics.js';
       r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
       ga('create','UA-XXXXX-X');ga('send','pageview');
-    // build:js(.) scripts/plugins.js
+    // build:js(./) scripts/plugins.js
     script(src="bower_components/bootstrap/js/affix.js")
     script(src="bower_components/bootstrap/js/alert.js")
     script(src="bower_components/bootstrap/js/dropdown.js")
@@ -74,6 +77,6 @@ html.no-js
     script(src="bower_components/bootstrap/js/collapse.js")
     script(src="bower_components/bootstrap/js/tab.js")
     // endbuild
-    // build:js({app,.tmp}) scripts/main.js
+    // build:js(.) scripts/main.js
     script(src="scripts/main.js")
     // endbuild
