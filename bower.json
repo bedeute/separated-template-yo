@@ -1,0 +1,7 @@
+{
+  "name": "gm-template",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "~3.3.1"
+  }
+}

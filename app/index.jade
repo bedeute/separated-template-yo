@@ -1,0 +1,31 @@
+extends ./layout/default.jade
+
+block content
+  header.wrp-header
+    nav.header-nav.container
+      a(href="#").pull-left.header-profile-pic
+        img(src="images/akibanation-logo-125x125.jpg")
+      ul.nav.navbar-nav
+        li: a(href="#") About
+        li: a(href="#") Dashboard
+        li: a(href="#") Calendar
+        li: a(href="#") Media
+        li: a(href="#") Sponsor
+        li: a(href="#") Member
+        li: a(href="#") Blog
+      ul.nav.navbar-nav.pull-right
+        li: a(href="#") Login
+    .wrp-header-cover
+      img(src="images/cover.jpg").header-cover
+      .header-cover-overlay.header-cover-overlay-pttrn
+      .header-cover-overlay.header-cover-overlay-gradi-top
+      .header-cover-overlay.header-cover-overlay-gradi-bottom
+    .header-id
+      .header-id-title.text-center
+        h2 Akibanation Surabaya
+      .header-id-stats.text-center
+        ul.list-inline
+          li: a(href="#") 600 Events
+          li: a(href="#") 442 Meetups
+          li: a(href="#") 1.3k Member
+          li: a(href="#") 20 Organizer
