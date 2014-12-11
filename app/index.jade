@@ -2,30 +2,220 @@ extends ./layout/default.jade
 
 block content
   header.wrp-header
-    nav.header-nav.container
-      a(href="#").pull-left.header-profile-pic
+    nav.header-nav.container(data-spy="affix", data-offset-top="125")
+      a(href="#").header-profile-pic
         img(src="images/akibanation-logo-125x125.jpg")
-      ul.nav.navbar-nav
-        li: a(href="#") About
+      button.navbar-toggle.slidebar-toggle(type="button")
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      ul.nav.nav-pills.pull-left
+        li: a(href="#")
+          span.glyphicon.glyphicon-home
+        li.active: a(href="#") About
         li: a(href="#") Dashboard
         li: a(href="#") Calendar
         li: a(href="#") Media
         li: a(href="#") Sponsor
         li: a(href="#") Member
         li: a(href="#") Blog
-      ul.nav.navbar-nav.pull-right
+      ul.nav.nav-pills.pull-right
+        li: a(href="#")
+          span.glyphicon.glyphicon-search
         li: a(href="#") Login
-    .wrp-header-cover
-      img(src="images/cover.jpg").header-cover
-      .header-cover-overlay.header-cover-overlay-pttrn
-      .header-cover-overlay.header-cover-overlay-gradi-top
-      .header-cover-overlay.header-cover-overlay-gradi-bottom
-    .header-id
-      .header-id-title.text-center
-        h2 Akibanation Surabaya
-      .header-id-stats.text-center
+    .wrp-header-cover-block
+      .wrp-header-cover(data-spy="affix", data-offset-top="300")
+        img(src="images/cover.jpg").header-cover
+        .header-cover-overlay.header-cover-overlay-pttrn
+        .header-cover-overlay.header-cover-overlay-gradi-top
+        .header-cover-overlay.header-cover-overlay-gradi-bottom
+    .header-id.text-center(data-spy="affix", data-offset-top="290")
+      .header-id-title
+        h1 Akibanation Surabaya
+      .header-id-stats
         ul.list-inline
           li: a(href="#") 600 Events
           li: a(href="#") 442 Meetups
           li: a(href="#") 1.3k Member
           li: a(href="#") 20 Organizer
+
+  .container.content
+    .row
+      .col-md-8
+        h2 Community Information
+        p Lorem ipsum dolor sit amet, posidonium persequeris necessitatibus
+          | vim id. Eos explicari gubergren sadipscing et, sea ad pertinacia
+          | interesset complectitur. Habeo paulo inermis ius te. In exerci
+          | iriure vix, an pri eius timeam posidonium. Maiorum expetenda te
+          | vix, ei fugit dicta virtute sed, nam ex vidit vocibus civibus.
+          | At velit partem ocurreret est.
+        .stream-block.text-center
+          iframe(width="560" height="315" src="//www.youtube-nocookie.com/embed/FoRRybrFR0c?rel=0" frameborder="0" allowfullscreen)
+        button.btn
+          span.glyphicon.glyphicon-chevron-right
+          | &nbsp;Show more
+
+        h2 Sponsor List
+        .sponsor-list-block
+          a(href="#").identity
+            .identity-pic.ribbon
+              span.ribbon-gold Gold Sponsor
+              img.img-thumbnail(src='images/pocari-sweat-logo.png')
+            .identity-content
+              h4 Pocari Sweat Indonesia
+              p Et tantas quaestio reprehendunt qui, ex albucius maiestatis nam.
+                | Qui sadipscing eloquentiam ea. Ex discere volumus nam, et stet movet eum, 
+
+          .sponsor-list-item
+            a(href="#").identity
+              .identity-pic.ribbon
+                span.ribbon-silver Silver Sponsor
+                img.img-thumbnail(src='images/pocari-sweat-logo.png')
+              .identity-content
+                h4 Pocari Sweat Indonesia
+                p Et tantas quaestio reprehendunt qui, ex albucius maiestatis nam.                   
+          .sponsor-list-item
+            a(href="#").identity
+              .identity-pic.ribbon
+                span.ribbon-silver Silver Sponsor
+                img.img-thumbnail(src='images/djarum-super-logo.png')
+              .identity-content
+                h4 Pocari Sweat Indonesia
+                p Et tantas quaestio reprehendunt qui, ex albucius maiestatis nam.
+          .sponsor-list-item
+            a(href="#").identity
+              .identity-pic.ribbon
+                span.ribbon-bronze Bronze Sponsor
+                img.img-thumbnail(src='images/pocari-sweat-logo.png')
+              .identity-content
+                h4 Pocari Sweat Indonesia
+                p Et tantas quaestio reprehendunt qui, ex albucius maiestatis nam.
+          .sponsor-list-item
+            a(href="#").identity
+              .identity-pic.ribbon
+                span.ribbon-bronze Bronze Sponsor
+                img.img-thumbnail(src='images/djarum-super-logo.png')
+              .identity-content
+                h4 Pocari Sweat Indonesia
+                p Et tantas quaestio reprehendunt qui, ex albucius maiestatis nam.
+        button.btn
+          span.glyphicon.glyphicon-chevron-right
+          | &nbsp;Show more
+
+        h2 Latest Photo
+        .latest-photo-block
+          a.latest-photo-list(href="#")
+            img(src="images/djarum-super-logo.png")
+          a.latest-photo-list(href="#")
+            img(src="images/djarum-super-logo.png")
+          a.latest-photo-list(href="#")
+            img(src="images/djarum-super-logo.png")
+          a.latest-photo-list(href="#")
+            img(src="images/djarum-super-logo.png")
+        button.btn
+          span.glyphicon.glyphicon-play-circle
+          | &nbsp;Show all photos
+
+
+      aside.col-md-4
+        .shoutout-block.text-center
+          h3 Be a part of this community?
+          button.btn.btn-lg Join Now!              
+
+        .list-group.aside-block
+          .list-group-item
+            .aside-info.identity
+              img.identity-pic.img-thumbnail.img-circle(src="images/profile-pic-honda.jpg")
+              .identity-content
+                span.text-muted Organizer
+                h4 Keisuke Honda
+                button.btn.btn-sm
+                  span.glyphicon.glyphicon-envelope
+                  | &nbsp;Contact Us
+          .list-group-item
+            h3 Upcoming Schedules
+            .list-group.aside-schedule
+              .list-group-item.aside-schedule-timestamp.text-center Saturday, 22 December 2014
+              a.list-group-item.aside-schedule-list(href="#")
+                h4 Gramedia School Holiday Fair 2013
+                p
+                  span.glyphicon.glyphicon-time
+                  | &nbsp;7.30 pm by Jakarta 
+                  strong Great Events
+              a.list-group-item.aside-schedule-list(href="#")
+                h4 Contest Education With Universitas Diponegoro ELECTRICAL INNOVATION AWARDS 2013
+                p
+                  span.glyphicon.glyphicon-time
+                  | &nbsp;7.30 pm by Jakarta 
+                  strong Great Events
+              a.list-group-item.aside-schedule-list(href="#")
+                h4 Gramedia School Holiday Fair 2013
+                p
+                  span.glyphicon.glyphicon-time
+                  | &nbsp;7.30 pm by Jakarta 
+                  strong Great Events
+              a.list-group-item.aside-schedule-list(href="#")
+                h4 Contest Education With Universitas Diponegoro ELECTRICAL INNOVATION AWARDS 2013
+                p
+                  span.glyphicon.glyphicon-time
+                  | &nbsp;7.30 pm by Jakarta 
+                  strong Great Events
+              .list-group-item.aside-schedule-list.text-center
+                button.btn
+                  span.glyphicon.glyphicon-chevron-right
+                  | &nbsp;Show more
+          .list-group-item
+            h3 Latest Update
+            .aside-upd-post-block
+              .aside-upd-post
+                p quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid
+                  | ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea
+                  | voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum
+                  | fugiat quo voluptas nulla pariatur?
+                .aside-upd-post-timestamp.pull-right
+                  span.glyphicon.glyphicon-time
+                  | &nbsp; 14 August 2014
+              .aside-upd-post
+                p quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid
+                  | ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea
+                  | voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum
+                  | fugiat quo voluptas nulla pariatur?
+                .aside-upd-post-timestamp.pull-right
+                  span.glyphicon.glyphicon-time
+                  | &nbsp; 14 August 2014
+              .aside-upd-post
+                p quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid
+                  | ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea
+                  | voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum
+                  | fugiat quo voluptas nulla pariatur?
+                .aside-upd-post-timestamp.pull-right
+                  span.glyphicon.glyphicon-time
+                  | &nbsp; 14 August 2014
+              .aside-upd-post
+                p quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid
+                  | ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea
+                  | voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum
+                  | fugiat quo voluptas nulla pariatur?
+                .aside-upd-post-timestamp.pull-right
+                  span.glyphicon.glyphicon-time
+                  | &nbsp; 14 August 2014
+          .list-group-item
+            h3 Latest Member
+            .aside-latest-member-block.text-center
+              a(href="#").aside-latest-member
+                img(src="images/kagawa.jpg")
+              a(href="#").aside-latest-member
+                img(src="images/goonerette-1.jpg")
+              a(href="#").aside-latest-member
+                img(src="images/nakata.jpg")
+              a(href="#").aside-latest-member
+                img(src="images/uchida.jpg")
+              a(href="#").aside-latest-member
+                img(src="images/goonerette-2.jpg")
+            button.btn
+              span.glyphicon.glyphicon-chevron-right
+              | &nbsp;Show all member
+
+
+

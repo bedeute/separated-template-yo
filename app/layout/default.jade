@@ -25,25 +25,52 @@ html.no-js
     .whole
       block content
       block footer
-        footer.container
-          .row
-            .col-xs-12.col-sm-8.footer-nav
-              ul.list-inline.pull-left
-                li.active
-                  a(href="#") about
-                li
-                  a(href="#") dashboard
-                li
-                  a(href="#") calendar
-                li
-                  a(href="#") media
-                li
-                  a(href="#") member
-                li
-                  a(href="#") blog
-            .col-xs-12.col-sm-4.footer-logo
-              a(href="https://grouphub.me") Powered by&nbsp;:&nbsp;
-                img(src="images/grouphub-logo-97x24.png")
+        footer
+          .container
+            .row
+              .col-sm-4
+                .footer-shoutout.text-center
+                  h3 Akibanation Surabaya
+                  p Be a part of this Community?
+                  button.btn Join Now!
+              .col-sm-8
+                h3 Latest Blog
+                .footer-latest-blog
+                  .footer-latest-blog-wide
+                    a.footer-latest-blog-headline(href="#")
+                      h4 We have new gossip? guess what......
+                    .footer-latest-blog-timestamp
+                      span.glyphicon.glyphicon-time
+                      | &nbsp;22 August 2014 by 
+                      strong Admin
+                    p Morbi metus magna, mattis at male suada eget, tempor id urna.
+                      | &nbsp;Suspendisse potenti. Cras at nisi interdum neque tincidunt pellentesque. Aenean porta molestie quam ...
+                  .footer-latest-blog-mini
+                    a.footer-latest-blog-headline(href="#")
+                      h4 We have new gossip? guess what......
+                    .footer-latest-blog-timestamp
+                      span.glyphicon.glyphicon-time
+                      | &nbsp;22 August 2014 by 
+                      strong Admin
+            hr
+            .row
+              .col-xs-12.col-sm-8.footer-nav
+                ul.list-inline.pull-left
+                  li.active
+                    a(href="#") about
+                  li
+                    a(href="#") dashboard
+                  li
+                    a(href="#") calendar
+                  li
+                    a(href="#") media
+                  li
+                    a(href="#") member
+                  li
+                    a(href="#") blog
+              .col-xs-12.col-sm-4.footer-logo
+                a(href="https://grouphub.me") Powered by&nbsp;:&nbsp;
+                  img(src="images/grouphub-logo-97x24-light.png")
 
     // build:js(.) scripts/vendor.js
     // bower:js
@@ -51,13 +78,13 @@ html.no-js
     // endbower
     // endbuild
     // Google Analytics: change UA-XXXXX-X to be your site's ID.
-    script.
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='//www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
+    //- script.
+    //-   (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+    //-   function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+    //-   e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+    //-   e.src='//www.google-analytics.com/analytics.js';
+    //-   r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+    //-   ga('create','UA-XXXXX-X');ga('send','pageview');
     // build:js(.) scripts/plugins.js
     script(src="bower_components/bootstrap/js/affix.js")
     script(src="bower_components/bootstrap/js/alert.js")
