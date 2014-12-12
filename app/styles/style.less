@@ -40,6 +40,7 @@ body {
 
 	&.affix {
 		height: 150px;
+		.animation(top-bottom .4s linear);
 
 		& > .header-cover {
 			filter: blur(10px);
@@ -92,19 +93,34 @@ body {
 		padding-top: 8px;
 		padding-bottom: 8px;
 
-		& > .nav-pills{
 
+		@media screen and (max-width: 991px) {
+			width: 100%;
+			border-radius: 0;
+		}
 
-			&.pull-left {
-				margin-left: 130px;
-			}
+		& .nav-pills{
 
 			& > li{
+
+				&.active > a,
+				&.active > a:hover,
+				&.active > a:focus {
+					background: @main-accent-color;
+					color: lighten(@main-accent-color, 40%);
+				}
 
 				& > a {
 
 					padding-top: 6px;
 					padding-bottom: 6px;
+					color: #d6d6d6;
+
+					&:hover,
+					&:focus	{
+						color: @main-accent-color;
+						background-color: transparent;
+					}
 				}
 			}
 		}
@@ -112,6 +128,7 @@ body {
 		&.affix {
 			z-index: 2;
 			border-radius: 0;
+			-webkit-animation: top-bottom .2s ease;
 		}
 	}
 
@@ -166,6 +183,7 @@ body {
 
 		&.affix {
 			top: 50px;
+			bottom: inherit;
 		}
 	}
 
@@ -502,5 +520,41 @@ footer {
 }
 
 // end of footer
+
+
+// slidebar menu style
+
+// add transparent background to whole page
+.slidebar-bg {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: #000;
+	opacity: .8;
+	z-index: 2;
+}
+.slidebar-menu {
+
+	margin-left: 130px;
+
+
+
+	&-show {
+		.translate(0,0);
+	}
+}
+
+@-webkit-keyframes top-bottom {
+   from  { top: -10px; }
+   to    { top: 0; }
+}
+@keyframes top-bottom {
+   from  { top: -10px; }
+   to    { top: 0; }
+}
+
+// end of slidebar menu style
 
 @import "import/tablet-view.less";

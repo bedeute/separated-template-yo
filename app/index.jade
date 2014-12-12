@@ -1,25 +1,30 @@
 extends ./layout/default.jade
 
 block content
+  //- .slidebar-bg
   header.wrp-header
     nav.header-nav.container(data-spy="affix", data-offset-top="125")
       a(href="#").header-profile-pic
         img(src="images/akibanation-logo-125x125.jpg")
-      button.navbar-toggle.slidebar-toggle(type="button")
+      button.navbar-toggle.slidebar-toggle(type="button", for="cuk")
         span.sr-only Toggle navigation
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      ul.nav.nav-pills.pull-left
-        li: a(href="#")
-          span.glyphicon.glyphicon-home
-        li.active: a(href="#") About
-        li: a(href="#") Dashboard
-        li: a(href="#") Calendar
-        li: a(href="#") Media
-        li: a(href="#") Sponsor
-        li: a(href="#") Member
-        li: a(href="#") Blog
+      .slidebar-menu
+        a.slidebar-toggle.visible-xs(href="#")
+          span.glyphicon.glyphicon.arrow-left
+          | back
+        ul.nav.nav-pills.pull-left
+          li: a(href="#")
+            span.glyphicon.glyphicon-home
+          li.active: a(href="#") About
+          li: a(href="#") Dashboard
+          li: a(href="#") Calendar
+          li: a(href="#") Media
+          li: a(href="#") Sponsor
+          li: a(href="#") Member
+          li: a(href="#") Blog
       ul.nav.nav-pills.pull-right
         li: a(href="#")
           span.glyphicon.glyphicon-search
