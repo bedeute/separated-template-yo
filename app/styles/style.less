@@ -8,11 +8,32 @@
 @base-white:				#f9f9f9;
 @base-white-aside:			#fcfcfc;
 @main-accent-color:			#c40416;
-// enfd custom variable
+// end custom variable
+
+// reset styles
+
+a {
+  color: @main-accent-color;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: darken(spin(@main-accent-color, 7), 6%);
+    text-decoration: @link-hover-decoration;
+  }
+
+  &:focus {
+    .tab-focus();
+  }
+}
+
+// end of reset styles
 
 body {
 	background-color: @base-white;
 }
+
+
 
 .wrp-header-cover {
 	position: absolute;
@@ -128,7 +149,22 @@ body {
 		&.affix {
 			z-index: 2;
 			border-radius: 0;
-			-webkit-animation: top-bottom .2s ease;
+			
+
+			& > .header-profile-pic {
+				top: 8px;
+
+				& > img {
+					height: 32px;
+					width: 32px;
+				}
+			}
+
+			& > .slidebar-menu {
+				margin-left: 48px;
+			}
+
+
 		}
 	}
 
@@ -136,6 +172,7 @@ body {
 		display: block;
 		position: absolute;
 		top: -14px;
+		.animation(top-bottom .2s linear);
 	}
 
 	&-id {
@@ -176,6 +213,11 @@ body {
 						display: block;
 						padding: 8px 10px;
 						color: #555;
+
+						&:hover {
+							color: @main-accent-color;
+							text-decoration: none;
+						}
 					}
 				}
 			}
@@ -221,7 +263,7 @@ body {
 .sponsor-list-item{
 
 	float: left;
-	width: 48%;
+	width: 47.6%;
 	margin-right: 24px;
 	margin-bottom: 10px;
 	margin-top: 10px;
@@ -246,7 +288,7 @@ body {
 		position: relative;
 		float: left;
 		height: 180px;
-		margin-left: 14px;
+		margin-left: 12px;
 		border-radius: 4px;
 		border: 5px solid @base-white;
 		.box-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
@@ -292,8 +334,9 @@ body {
 }
 
 .identity {
-	display: table;
+	display: table-row;
 	width: 100%;
+	text-align: left;
 
 
 	&-pic {
@@ -374,7 +417,6 @@ body {
 
 	& > .identity-content {
 		padding-left: 16px;
-		width: 215px;
 
 		& > h4 {
 			margin-top: 2px;
@@ -546,6 +588,10 @@ footer {
 	}
 }
 
+
+// end of slidebar menu style
+
+// animation var
 @-webkit-keyframes top-bottom {
    from  { top: -10px; }
    to    { top: 0; }
@@ -554,7 +600,48 @@ footer {
    from  { top: -10px; }
    to    { top: 0; }
 }
+// end of animation var
 
-// end of slidebar menu style
+// modal style
+#modal-login {
 
+	& > .modal-dialog {
+		width: 300px;
+
+		& > .modal-content {
+
+			& > .modal-body {
+
+				& > button.close {
+					position: absolute;
+					border-radius: 4px;
+					background-color: #f9f9f9;
+					padding: 4px 9px;
+					border: 1px solid #aaa;
+					right: -20px;
+					top: -20px;
+					opacity: 1;
+					color: #888;
+					.box-shadow(0 0 4px 1px rgba(0, 0, 0, 0.1));
+
+					&:hover {
+						color: #D54956;
+					}
+				}
+
+			}
+
+			& > .modal-footer {
+				padding: 10px 20px;
+			}
+		}
+	}
+}
+
+// end of modal style
+
+
+
+@import "import/custom-button.less";
 @import "import/tablet-view.less";
+@import "import/mobile-view.less";

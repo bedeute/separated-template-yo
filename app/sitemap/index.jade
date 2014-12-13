@@ -1,0 +1,22 @@
+extends ../layout/_default.jade
+
+block additional-link
+	// build:css(.tmp) /styles/styles-sitemap.css
+	link(rel="stylesheet", href="/styles/styles-sitemap.css")
+	// endbuild
+
+
+block content
+	.container
+		h2.text-center Grouphub.me template
+		.row
+			.col-sm-3
+				.list-group
+					.list-group-item General
+					a(href="/").list-group-item Landing Page w/ popup login
+					a(href="/about.html").list-group-item About
+					a(href="/calendar.html").list-group-item Calendar
+					a(href="/media.html").list-group-item Media
+					a(href="/sponsor.html").list-group-item Sponsor
+					a(href="/member.html").list-group-item Member
+					a(href="/blog.html").list-group-item Blog

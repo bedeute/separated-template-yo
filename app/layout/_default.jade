@@ -1,0 +1,49 @@
+doctype html
+html.no-js
+  head
+    include ../include/_head.jade
+    block additional-link
+  body
+    //if lt IE 10
+      p.browsehappy
+        | You are using an
+        strong outdated
+        | browser. Please
+        a(href="http://browsehappy.com/") upgrade your browser
+        | to improve your experience.
+    block after-body
+    .whole
+      block content
+      block footer
+        include ../include/_footer.jade
+    // build:js(.) scripts/vendor.js
+    // bower:js
+    script(src='/bower_components/jquery/dist/jquery.js')
+    // endbower
+    // endbuild
+    // Google Analytics: change UA-XXXXX-X to be your site's ID.
+    //- script.
+    //-   (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+    //-   function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+    //-   e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+    //-   e.src='//www.google-analytics.com/analytics.js';
+    //-   r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+    //-   ga('create','UA-XXXXX-X');ga('send','pageview');
+    // build:js(.) scripts/plugins.js
+    script(src="bower_components/bootstrap/js/affix.js")
+    script(src="bower_components/bootstrap/js/alert.js")
+    script(src="bower_components/bootstrap/js/dropdown.js")
+    script(src="bower_components/bootstrap/js/tooltip.js")
+    script(src="bower_components/bootstrap/js/modal.js")
+    script(src="bower_components/bootstrap/js/transition.js")
+    script(src="bower_components/bootstrap/js/button.js")
+    script(src="bower_components/bootstrap/js/popover.js")
+    script(src="bower_components/bootstrap/js/carousel.js")
+    script(src="bower_components/bootstrap/js/scrollspy.js")
+    script(src="bower_components/bootstrap/js/collapse.js")
+    script(src="bower_components/bootstrap/js/tab.js")
+    // endbuild
+    // build:js({app,.tmp}) scripts/main.js
+    script(src="scripts/main.js")
+    script(src="scripts/slidebar-menu.js")
+    // endbuild

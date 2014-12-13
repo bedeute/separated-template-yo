@@ -11,8 +11,8 @@
     <!-- bower:css-->
     <!-- endbower-->
     <!-- endbuild-->
-    <!-- build:css(.tmp) styles/styles.css-->
-    <link rel="stylesheet" href="styles/style.css">
+    <!-- build:css(.tmp) /styles/styles.css-->
+    <link rel="stylesheet" href="/styles/style.css">
     <!-- endbuild-->
   </head>
   <body>
@@ -24,39 +24,71 @@
       a(href="http://browsehappy.com/") upgrade your browser
       | to improve your experience.
     -->
+    <div id="modal-login" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button type="button" data-dismiss="modal" class="close"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <form role="form">
+              <div class="form-group">
+                <input type="text" placeholder="Full name" class="form-control">
+              </div>
+              <div class="form-group">
+                <input type="password" placeholder="Password" class="form-control">
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox">Remember me
+                </label>
+              </div>
+            </form>
+            <button class="btn btn-primary">Login</button>
+            <button class="btn btn-default">Login with Facebook</button>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-success btn-block">I want to register</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="whole">
       <header class="wrp-header">
-        <nav data-spy="affix" data-offset-top="200" class="header-nav container"><a href="#" class="pull-left header-profile-pic"><img src="images/akibanation-logo-125x125.jpg"></a>
-          <ul class="nav nav-pills pull-left">
-            <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
-            <li class="active"><a href="#">About</a></li>
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Calendar</a></li>
-            <li><a href="#">Media</a></li>
-            <li><a href="#">Sponsor</a></li>
-            <li><a href="#">Member</a></li>
-            <li><a href="#">Blog</a></li>
-          </ul>
+        <nav data-spy="affix" data-offset-top="125" class="header-nav container"><a href="#" class="header-profile-pic"><img src="images/akibanation-logo-125x125.jpg"></a>
+          <button type="button" for="cuk" class="navbar-toggle slidebar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+          <div class="slidebar-menu"><a class="slidebar-toggle visible-xs"><span class="glyphicon glyphicon arrow-left"></span>back</a>
+            <ul class="nav nav-pills pull-left">
+              <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+              <li class="active"><a href="#">About</a></li>
+              <li><a href="#">Dashboard</a></li>
+              <li><a href="#">Calendar</a></li>
+              <li><a href="#">Media</a></li>
+              <li><a href="#">Sponsor</a></li>
+              <li><a href="#">Member</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </div>
           <ul class="nav nav-pills pull-right">
             <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
-            <li><a href="#">Login</a></li>
+            <li><a href="#modal-login" data-toggle="modal" data-target="#modal-login">Login</a></li>
           </ul>
         </nav>
-        <div class="wrp-header-cover"><img src="images/cover.jpg" class="header-cover">
-          <div class="header-cover-overlay header-cover-overlay-pttrn"></div>
-          <div class="header-cover-overlay header-cover-overlay-gradi-top"></div>
-          <div class="header-cover-overlay header-cover-overlay-gradi-bottom"></div>
+        <div class="wrp-header-cover-block">
+          <div data-spy="affix" data-offset-top="300" class="wrp-header-cover"><img src="images/cover.jpg" class="header-cover">
+            <div class="header-cover-overlay header-cover-overlay-pttrn"></div>
+            <div class="header-cover-overlay header-cover-overlay-gradi-top"></div>
+            <div class="header-cover-overlay header-cover-overlay-gradi-bottom"></div>
+          </div>
         </div>
-        <div class="header-id text-center">
+        <div data-spy="affix" data-offset-top="290" class="header-id text-center">
           <div class="header-id-title">
             <h1>Akibanation Surabaya</h1>
           </div>
           <div class="header-id-stats">
             <ul class="list-inline">
-              <li><a href="#">600 Events</a></li>
-              <li><a href="#">442 Meetups</a></li>
-              <li><a href="#">1.3k Member</a></li>
-              <li><a href="#">20 Organizer</a></li>
+              <li><a href="#"> <span>600&nbsp;</span>Events</a></li>
+              <li><a href="#"> <span>442&nbsp;</span>Meetups</a></li>
+              <li><a href="#"> <span>1.3k&nbsp;</span>Member</a></li>
+              <li><a href="#"> <span>20&nbsp;</span>Organizer</a></li>
             </ul>
           </div>
         </div>
@@ -73,10 +105,10 @@
               vix, ei fugit dicta virtute sed, nam ex vidit vocibus civibus.
               At velit partem ocurreret est.
             </p>
-            <div class="stream-block text-center">
-              <iframe width="560" height="315" src="//www.youtube-nocookie.com/embed/FoRRybrFR0c?rel=0" frameborder="0" allowfullscreen></iframe>
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe width="560" height="315" src="//www.youtube-nocookie.com/embed/FoRRybrFR0c?rel=0" allowfullscreen class="embed-responsive-item"></iframe>
             </div>
-            <button class="btn"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;Show more</button>
+            <button class="btn btn-main"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;Show more</button>
             <h2>Sponsor List</h2>
             <div class="sponsor-list-block"><a href="#" class="identity">
                 <div class="identity-pic ribbon"><span class="ribbon-gold">Gold Sponsor</span><img src="images/pocari-sweat-logo.png" class="img-thumbnail"></div>
@@ -112,22 +144,22 @@
                     <p>Et tantas quaestio reprehendunt qui, ex albucius maiestatis nam.</p>
                   </div></a></div>
             </div>
-            <button class="btn"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;Show more</button>
+            <button class="btn btn-main"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;Show more</button>
             <h2>Latest Photo</h2>
             <div class="latest-photo-block"><a href="#" class="latest-photo-list"><img src="images/djarum-super-logo.png"></a><a href="#" class="latest-photo-list"><img src="images/djarum-super-logo.png"></a><a href="#" class="latest-photo-list"><img src="images/djarum-super-logo.png"></a><a href="#" class="latest-photo-list"><img src="images/djarum-super-logo.png"></a></div>
-            <button class="btn"><span class="glyphicon glyphicon-play-circle"></span>&nbsp;Show all photos</button>
+            <button class="btn btn-main"><span class="glyphicon glyphicon-play-circle"></span>&nbsp;Show all photos</button>
           </div>
           <aside class="col-md-4">
             <div class="shoutout-block text-center">
               <h3>Be a part of this community?</h3>
-              <button class="btn btn-lg">Join Now!              </button>
+              <button class="btn btn-main btn-lg">Join Now!              </button>
             </div>
             <div class="list-group aside-block">
               <div class="list-group-item">
                 <div class="aside-info identity"><img src="images/profile-pic-honda.jpg" class="identity-pic img-thumbnail img-circle">
                   <div class="identity-content"><span class="text-muted">Organizer</span>
                     <h4>Keisuke Honda</h4>
-                    <button class="btn btn-sm"><span class="glyphicon glyphicon-envelope"></span>&nbsp;Contact Us</button>
+                    <button class="btn btn-main btn-sm"><span class="glyphicon glyphicon-envelope"></span>&nbsp;Contact Us</button>
                   </div>
                 </div>
               </div>
@@ -144,7 +176,7 @@
                     <h4>Contest Education With Universitas Diponegoro ELECTRICAL INNOVATION AWARDS 2013</h4>
                     <p><span class="glyphicon glyphicon-time"></span>&nbsp;7.30 pm by Jakarta <strong>Great Events</strong></p></a>
                   <div class="list-group-item aside-schedule-list text-center">
-                    <button class="btn"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;Show more</button>
+                    <button class="btn btn-main"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;Show more</button>
                   </div>
                 </div>
               </div>
@@ -192,7 +224,7 @@
               <div class="list-group-item">
                 <h3>Latest Member</h3>
                 <div class="aside-latest-member-block text-center"><a href="#" class="aside-latest-member"><img src="images/kagawa.jpg"></a><a href="#" class="aside-latest-member"><img src="images/goonerette-1.jpg"></a><a href="#" class="aside-latest-member"><img src="images/nakata.jpg"></a><a href="#" class="aside-latest-member"><img src="images/uchida.jpg"></a><a href="#" class="aside-latest-member"><img src="images/goonerette-2.jpg"></a></div>
-                <button class="btn"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;Show all member</button>
+                <button class="btn btn-main"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;Show all member</button>
               </div>
             </div>
           </aside>
@@ -249,14 +281,6 @@
     <!-- endbower-->
     <!-- endbuild-->
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID.-->
-    <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='//www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
-    </script>
     <!-- build:js(.) scripts/plugins.js-->
     <script src="bower_components/bootstrap/js/affix.js"></script>
     <script src="bower_components/bootstrap/js/alert.js"></script>
@@ -273,6 +297,7 @@
     <!-- endbuild-->
     <!-- build:js({app,.tmp}) scripts/main.js-->
     <script src="scripts/main.js"></script>
+    <script src="scripts/slidebar-menu.js"></script>
     <!-- endbuild-->
   </body>
 </html>

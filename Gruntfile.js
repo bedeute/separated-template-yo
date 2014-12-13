@@ -176,7 +176,7 @@ module.exports = function (grunt) {
                 expand: true,
                 cwd: '<%= config.app %>',
                 dest: '.tmp',
-                src: '*.jade',
+                src: ['**/*.jade', '!**/_*.jade'],
                 ext: '.html'
             }]
         }
@@ -483,8 +483,8 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'clean:dist',
     'wiredep',
-    'copy:jadeTweak',
     'jade',
+    'copy:jadeTweak',
     'copy:useminTweak',
     'useminPrepare',
     'concurrent:dist',

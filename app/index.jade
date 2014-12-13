@@ -1,4 +1,27 @@
-extends ./layout/default.jade
+extends ./layout/_default.jade
+
+block after-body
+  //- include ./include/modal-login.jade
+  #modal-login.modal.fade
+    .modal-dialog
+      .modal-content
+        .modal-body
+          button(type="button", data-dismiss="modal").close
+            span(aria-hidden="true") &times;
+            span.sr-only Close
+          form(role="form")
+            .form-group
+              input.form-control(type="text", placeholder="Full name")
+            .form-group
+              input.form-control(type="password", placeholder="Password")
+            .checkbox
+              label
+                input(type="checkbox")
+                | Remember me
+          button.btn.btn-primary Login
+          button.btn.btn-default Login with Facebook
+        .modal-footer
+          button.btn.btn-success.btn-block I want to register
 
 block content
   //- .slidebar-bg
@@ -12,7 +35,7 @@ block content
         span.icon-bar
         span.icon-bar
       .slidebar-menu
-        a.slidebar-toggle.visible-xs(href="#")
+        a.slidebar-toggle.visible-xs
           span.glyphicon.glyphicon.arrow-left
           | back
         ul.nav.nav-pills.pull-left
@@ -28,7 +51,7 @@ block content
       ul.nav.nav-pills.pull-right
         li: a(href="#")
           span.glyphicon.glyphicon-search
-        li: a(href="#") Login
+        li: a(href="#modal-login", data-toggle="modal", data-target="#modal-login") Login
     .wrp-header-cover-block
       .wrp-header-cover(data-spy="affix", data-offset-top="300")
         img(src="images/cover.jpg").header-cover
@@ -40,10 +63,18 @@ block content
         h1 Akibanation Surabaya
       .header-id-stats
         ul.list-inline
-          li: a(href="#") 600 Events
-          li: a(href="#") 442 Meetups
-          li: a(href="#") 1.3k Member
-          li: a(href="#") 20 Organizer
+          li: a(href="#") 
+            span 600&nbsp;
+            | Events
+          li: a(href="#") 
+            span 442&nbsp;
+            | Meetups
+          li: a(href="#") 
+            span 1.3k&nbsp;
+            | Member
+          li: a(href="#") 
+            span 20&nbsp;
+            | Organizer
 
   .container.content
     .row
@@ -55,9 +86,9 @@ block content
           | iriure vix, an pri eius timeam posidonium. Maiorum expetenda te
           | vix, ei fugit dicta virtute sed, nam ex vidit vocibus civibus.
           | At velit partem ocurreret est.
-        .stream-block.text-center
-          iframe(width="560" height="315" src="//www.youtube-nocookie.com/embed/FoRRybrFR0c?rel=0" frameborder="0" allowfullscreen)
-        button.btn
+        .embed-responsive.embed-responsive-16by9
+          iframe.embed-responsive-item(width="560" height="315" src="//www.youtube-nocookie.com/embed/FoRRybrFR0c?rel=0" allowfullscreen)
+        button.btn.btn-main
           span.glyphicon.glyphicon-chevron-right
           | &nbsp;Show more
 
@@ -104,7 +135,7 @@ block content
               .identity-content
                 h4 Pocari Sweat Indonesia
                 p Et tantas quaestio reprehendunt qui, ex albucius maiestatis nam.
-        button.btn
+        button.btn.btn-main
           span.glyphicon.glyphicon-chevron-right
           | &nbsp;Show more
 
@@ -118,7 +149,7 @@ block content
             img(src="images/djarum-super-logo.png")
           a.latest-photo-list(href="#")
             img(src="images/djarum-super-logo.png")
-        button.btn
+        button.btn.btn-main
           span.glyphicon.glyphicon-play-circle
           | &nbsp;Show all photos
 
@@ -126,7 +157,7 @@ block content
       aside.col-md-4
         .shoutout-block.text-center
           h3 Be a part of this community?
-          button.btn.btn-lg Join Now!              
+          button.btn.btn-main.btn-lg Join Now!              
 
         .list-group.aside-block
           .list-group-item
@@ -135,7 +166,7 @@ block content
               .identity-content
                 span.text-muted Organizer
                 h4 Keisuke Honda
-                button.btn.btn-sm
+                button.btn.btn-main.btn-sm
                   span.glyphicon.glyphicon-envelope
                   | &nbsp;Contact Us
           .list-group-item
@@ -167,7 +198,7 @@ block content
                   | &nbsp;7.30 pm by Jakarta 
                   strong Great Events
               .list-group-item.aside-schedule-list.text-center
-                button.btn
+                button.btn.btn-main
                   span.glyphicon.glyphicon-chevron-right
                   | &nbsp;Show more
           .list-group-item
@@ -218,7 +249,7 @@ block content
                 img(src="images/uchida.jpg")
               a(href="#").aside-latest-member
                 img(src="images/goonerette-2.jpg")
-            button.btn
+            button.btn.btn-main
               span.glyphicon.glyphicon-chevron-right
               | &nbsp;Show all member
 
