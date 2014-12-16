@@ -1,14 +1,20 @@
-#modal-login.moda-l.fade
+#modal-login.modal.fade
   .modal-dialog
     .modal-content
-      .modal-header
+      .modal-body
         button(type="button", data-dismiss="modal").close
           span(aria-hidden="true") &times;
           span.sr-only Close
-        h4.modal-title Modal Title Here
-      .modal-body
-        p body here...
-          | yeah
+        form(role="form")
+          .form-group
+            input.form-control(type="text", placeholder="Full name")
+          .form-group
+            input.form-control(type="password", placeholder="Password")
+          .checkbox
+            label
+              input(type="checkbox")
+              | Remember me
+        button.btn.btn-primary Login
+        button.btn.btn-default Login with Facebook
       .modal-footer
-        button.btn.btn-primary Save Changes
-        button(data-dismiss="modal").btn.btn-default Close
+        button.btn.btn-success.btn-block I want to register

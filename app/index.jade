@@ -1,85 +1,12 @@
 extends ./layout/_default.jade
 
 block after-body
-  //- include ./include/modal-login.jade
-  #modal-login.modal.fade
-    .modal-dialog
-      .modal-content
-        .modal-body
-          button(type="button", data-dismiss="modal").close
-            span(aria-hidden="true") &times;
-            span.sr-only Close
-          form(role="form")
-            .form-group
-              input.form-control(type="text", placeholder="Full name")
-            .form-group
-              input.form-control(type="password", placeholder="Password")
-            .checkbox
-              label
-                input(type="checkbox")
-                | Remember me
-          button.btn.btn-primary Login
-          button.btn.btn-default Login with Facebook
-        .modal-footer
-          button.btn.btn-success.btn-block I want to register
-
+  include ./include/_modal-login.jade
 block content
-  //- .slidebar-bg
-  header.wrp-header
-    nav.header-nav.container(data-spy="affix", data-offset-top="125")
-      a(href="#").header-profile-pic
-        img(src="images/akibanation-logo-125x125.jpg")
-      button.navbar-toggle.slidebar-toggle(type="button", for="cuk")
-        span.sr-only Toggle navigation
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
-      .slidebar-menu
-        a.slidebar-toggle.visible-xs
-          span.glyphicon.glyphicon.arrow-left
-          | back
-        ul.nav.nav-pills.pull-left
-          li: a(href="#")
-            span.glyphicon.glyphicon-home
-          li.active: a(href="#") About
-          li: a(href="#") Dashboard
-          li: a(href="#") Calendar
-          li: a(href="#") Media
-          li: a(href="#") Sponsor
-          li: a(href="#") Member
-          li: a(href="#") Blog
-      ul.nav.nav-pills.pull-right
-        li: a(href="#")
-          span.glyphicon.glyphicon-search
-        li: a(href="#modal-login", data-toggle="modal", data-target="#modal-login") Login
-    .wrp-header-cover-block
-      .wrp-header-cover(data-spy="affix", data-offset-top="300")
-        img(src="images/cover.jpg").header-cover
-        .header-cover-overlay.header-cover-overlay-pttrn
-        .header-cover-overlay.header-cover-overlay-gradi-top
-        .header-cover-overlay.header-cover-overlay-gradi-bottom
-    .header-id.text-center(data-spy="affix", data-offset-top="290")
-      .header-id-title
-        h1 Akibanation Surabaya
-      .header-id-stats
-        ul.list-inline
-          li: a(href="#") 
-            span 600&nbsp;
-            | Events
-          li: a(href="#") 
-            span 442&nbsp;
-            | Meetups
-          li: a(href="#") 
-            span 1.3k&nbsp;
-            | Member
-          li: a(href="#") 
-            span 20&nbsp;
-            | Organizer
-
   .container.content
     .row
       .col-md-8
-        h2 Community Information
+        h2.subheading Community Information
         p Lorem ipsum dolor sit amet, posidonium persequeris necessitatibus
           | vim id. Eos explicari gubergren sadipscing et, sea ad pertinacia
           | interesset complectitur. Habeo paulo inermis ius te. In exerci
@@ -88,11 +15,12 @@ block content
           | At velit partem ocurreret est.
         .embed-responsive.embed-responsive-16by9
           iframe.embed-responsive-item(width="560" height="315" src="//www.youtube-nocookie.com/embed/FoRRybrFR0c?rel=0" allowfullscreen)
+        br
         button.btn.btn-main
           span.glyphicon.glyphicon-chevron-right
           | &nbsp;Show more
 
-        h2 Sponsor List
+        h2.subheading Sponsor List
         .sponsor-list-block
           a(href="#").identity
             .identity-pic.ribbon
@@ -135,11 +63,12 @@ block content
               .identity-content
                 h4 Pocari Sweat Indonesia
                 p Et tantas quaestio reprehendunt qui, ex albucius maiestatis nam.
+        br
         button.btn.btn-main
           span.glyphicon.glyphicon-chevron-right
           | &nbsp;Show more
 
-        h2 Latest Photo
+        h2.subheading Latest Photo
         .latest-photo-block
           a.latest-photo-list(href="#")
             img(src="images/djarum-super-logo.png")
@@ -149,6 +78,7 @@ block content
             img(src="images/djarum-super-logo.png")
           a.latest-photo-list(href="#")
             img(src="images/djarum-super-logo.png")
+        br
         button.btn.btn-main
           span.glyphicon.glyphicon-play-circle
           | &nbsp;Show all photos
@@ -162,45 +92,17 @@ block content
         .list-group.aside-block
           .list-group-item
             .aside-info.identity
-              img.identity-pic.img-thumbnail.img-circle(src="images/profile-pic-honda.jpg")
+              a.identity-pic(href="#")
+                img.img-thumbnail.img-circle(src="images/profile-pic-honda.jpg")
               .identity-content
                 span.text-muted Organizer
-                h4 Keisuke Honda
+                a(href="#")
+                  h4 Keisuke Honda
                 button.btn.btn-main.btn-sm
                   span.glyphicon.glyphicon-envelope
                   | &nbsp;Contact Us
           .list-group-item
-            h3 Upcoming Schedules
-            .list-group.aside-schedule
-              .list-group-item.aside-schedule-timestamp.text-center Saturday, 22 December 2014
-              a.list-group-item.aside-schedule-list(href="#")
-                h4 Gramedia School Holiday Fair 2013
-                p
-                  span.glyphicon.glyphicon-time
-                  | &nbsp;7.30 pm by Jakarta 
-                  strong Great Events
-              a.list-group-item.aside-schedule-list(href="#")
-                h4 Contest Education With Universitas Diponegoro ELECTRICAL INNOVATION AWARDS 2013
-                p
-                  span.glyphicon.glyphicon-time
-                  | &nbsp;7.30 pm by Jakarta 
-                  strong Great Events
-              a.list-group-item.aside-schedule-list(href="#")
-                h4 Gramedia School Holiday Fair 2013
-                p
-                  span.glyphicon.glyphicon-time
-                  | &nbsp;7.30 pm by Jakarta 
-                  strong Great Events
-              a.list-group-item.aside-schedule-list(href="#")
-                h4 Contest Education With Universitas Diponegoro ELECTRICAL INNOVATION AWARDS 2013
-                p
-                  span.glyphicon.glyphicon-time
-                  | &nbsp;7.30 pm by Jakarta 
-                  strong Great Events
-              .list-group-item.aside-schedule-list.text-center
-                button.btn.btn-main
-                  span.glyphicon.glyphicon-chevron-right
-                  | &nbsp;Show more
+            include ./include/_aside-schedule.jade
           .list-group-item
             h3 Latest Update
             .aside-upd-post-block
@@ -237,21 +139,7 @@ block content
                   span.glyphicon.glyphicon-time
                   | &nbsp; 14 August 2014
           .list-group-item
-            h3 Latest Member
-            .aside-latest-member-block.text-center
-              a(href="#").aside-latest-member
-                img(src="images/kagawa.jpg")
-              a(href="#").aside-latest-member
-                img(src="images/goonerette-1.jpg")
-              a(href="#").aside-latest-member
-                img(src="images/nakata.jpg")
-              a(href="#").aside-latest-member
-                img(src="images/uchida.jpg")
-              a(href="#").aside-latest-member
-                img(src="images/goonerette-2.jpg")
-            button.btn.btn-main
-              span.glyphicon.glyphicon-chevron-right
-              | &nbsp;Show all member
+            include ./include/_aside-member.jade
 
 
 

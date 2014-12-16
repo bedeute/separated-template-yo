@@ -1,0 +1,50 @@
+header.wrp-header
+    nav.header-nav.container(data-spy="affix", data-offset-top="125")
+      a(href="#").header-profile-pic
+        img(src="images/akibanation-logo-125x125.jpg")
+      button.navbar-toggle.slidebar-toggle(type="button", for="cuk")
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      .slidebar-menu
+        a.slidebar-toggle.visible-xs
+          span.glyphicon.glyphicon.arrow-left
+          | back
+        ul.nav.nav-pills.pull-left
+          li: a(href="/")
+            span.glyphicon.glyphicon-home
+          li.active: a(href="/about.html") About
+          li: a(href="/dashboard.html") Dashboard
+          li: a(href="/calendar.html") Calendar
+          li: a(href="/media.html") Media
+          li: a(href="/sponsor.html") Sponsor
+          li: a(href="/member.html") Member
+          li: a(href="blog.html") Blog
+      ul.nav.nav-pills.pull-right
+        li: a(href="#")
+          span.glyphicon.glyphicon-search
+        li: a(href="#modal-login", data-toggle="modal", data-target="#modal-login") Login
+    .wrp-header-cover-block
+      .wrp-header-cover(data-spy="affix", data-offset-top="300")
+        img(src="images/cover.jpg").header-cover
+        .header-cover-overlay.header-cover-overlay-pttrn
+        .header-cover-overlay.header-cover-overlay-gradi-top
+        .header-cover-overlay.header-cover-overlay-gradi-bottom
+    .header-id.text-center(data-spy="affix", data-offset-top="290")
+      .header-id-title
+        h1 Akibanation Surabaya
+      .header-id-stats
+        ul.list-inline
+          li: a(href="#") 
+            span 600&nbsp;
+            | Events
+          li: a(href="#") 
+            span 442&nbsp;
+            | Meetups
+          li: a(href="#") 
+            span 1.3k&nbsp;
+            | Member
+          li: a(href="#") 
+            span 20&nbsp;
+            | Organizer
