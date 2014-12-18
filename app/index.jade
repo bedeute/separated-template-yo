@@ -85,59 +85,15 @@ block content
 
 
       aside.col-md-4
-        .shoutout-block.text-center
-          h3 Be a part of this community?
-          button.btn.btn-main.btn-lg Join Now!              
-
+        include ./include/_aside-shoutout.jade
         .list-group.aside-block
           .list-group-item
-            .aside-info.identity
-              a.identity-pic(href="#")
-                img.img-thumbnail.img-circle(src="images/profile-pic-honda.jpg")
-              .identity-content
-                span.text-muted Organizer
-                a(href="#")
-                  h4 Keisuke Honda
-                button.btn.btn-main.btn-sm
-                  span.glyphicon.glyphicon-envelope
-                  | &nbsp;Contact Us
+            include ./include/_aside-identity.jade
           .list-group-item
             include ./include/_aside-schedule.jade
           .list-group-item
             h3 Latest Update
-            .aside-upd-post-block
-              .aside-upd-post
-                p quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid
-                  | ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea
-                  | voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum
-                  | fugiat quo voluptas nulla pariatur?
-                .aside-upd-post-timestamp.pull-right
-                  span.glyphicon.glyphicon-time
-                  | &nbsp; 14 August 2014
-              .aside-upd-post
-                p quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid
-                  | ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea
-                  | voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum
-                  | fugiat quo voluptas nulla pariatur?
-                .aside-upd-post-timestamp.pull-right
-                  span.glyphicon.glyphicon-time
-                  | &nbsp; 14 August 2014
-              .aside-upd-post
-                p quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid
-                  | ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea
-                  | voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum
-                  | fugiat quo voluptas nulla pariatur?
-                .aside-upd-post-timestamp.pull-right
-                  span.glyphicon.glyphicon-time
-                  | &nbsp; 14 August 2014
-              .aside-upd-post
-                p quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid
-                  | ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea
-                  | voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum
-                  | fugiat quo voluptas nulla pariatur?
-                .aside-upd-post-timestamp.pull-right
-                  span.glyphicon.glyphicon-time
-                  | &nbsp; 14 August 2014
+            include ./include/_aside-update.jade
           .list-group-item
             include ./include/_aside-member.jade
 

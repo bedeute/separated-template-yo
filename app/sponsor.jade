@@ -1,0 +1,90 @@
+extends ./layout/_default.jade
+
+block content
+	.container.content
+		.row
+			.col-md-8
+				.sponsor-block.card
+					h3.subheading Sponsorship Information
+					p Terima kasih anda sudah datang untuk mengunjungi halaman sponsor kami. Rotary Club Surabaya Jembatan Merah selalu
+						| membuka peluang anda untuk menjadi sponsor di kami. Dengan memberikan donasi di kami, logo perusahaan anda akan
+						| kami tampilkan di tempat kami sepert di bawah ini. Kami mempunyai 3 macam sponsorship, yaitu :
+					ul
+						li: h4 Gold Sponsorship - 100.000/bulan
+						li disini logo perusahaan anda akan ditayangkan paling atas
+						li anda akan selalu mendapat update untuk perusahaan anda.
+						li logo perusahaan anda akan kami tayangkan untuk semua aktifitas kami.
+					h3.subheading Sponsor List
+					.sponsor-list-block
+						a(href="#").identity
+							.identity-pic.ribbon
+								span.ribbon-gold Gold Sponsor
+								img.img-thumbnail(src='images/pocari-sweat-logo.png')
+							.identity-content
+								h4 Pocari Sweat Indonesia
+								p Et tantas quaestio reprehendunt qui, ex albucius maiestatis nam.
+									| Qui sadipscing eloquentiam ea. Ex discere volumus nam, et stet movet eum, 
+
+						.sponsor-list-item
+							a(href="#").identity
+								.identity-pic.ribbon
+									span.ribbon-silver Silver Sponsor
+									img.img-thumbnail(src='images/pocari-sweat-logo.png')
+								.identity-content
+									h4 Pocari Sweat Indonesia
+									p Et tantas quaestio reprehendunt qui, ex albucius maiestatis nam.                   
+						.sponsor-list-item
+							a(href="#").identity
+								.identity-pic.ribbon
+									span.ribbon-silver Silver Sponsor
+									img.img-thumbnail(src='images/djarum-super-logo.png')
+								.identity-content
+									h4 Pocari Sweat Indonesia
+									p Et tantas quaestio reprehendunt qui, ex albucius maiestatis nam.
+						.sponsor-list-item
+							a(href="#").identity
+								.identity-pic.ribbon
+									span.ribbon-bronze Bronze Sponsor
+									img.img-thumbnail(src='images/pocari-sweat-logo.png')
+								.identity-content
+									h4 Pocari Sweat Indonesia
+									p Et tantas quaestio reprehendunt qui, ex albucius maiestatis nam.
+						.sponsor-list-item
+							a(href="#").identity
+								.identity-pic.ribbon
+									span.ribbon-bronze Bronze Sponsor
+									img.img-thumbnail(src='images/djarum-super-logo.png')
+								.identity-content
+									h4 Pocari Sweat Indonesia
+									p Et tantas quaestio reprehendunt qui, ex albucius maiestatis nam.
+					br
+					button.btn.btn-main
+						span.glyphicon.glyphicon-chevron-right
+						| &nbsp;Show more
+			aside.col-md-4
+				.list-group.aside-block
+					.list-group-item
+						center
+							// AddThis Button BEGIN
+							.addthis_toolbox.addthis_default_style.addthis_32x32_style
+								a.addthis_button_facebook.at300b(title="Facebook", href="#")
+									span.at300bs.at15nc.at15t_facebook
+										span.at_a11y Share on facebook
+								a.addthis_button_twitter.at300b(title="Tweet", href="#")
+									span.at300bs.at15nc.at15t_twitter
+										span.at_a11y Share on twitter
+								a.addthis_button_google_plusone_share.at300b(href="http://www.addthis.com/bookmark.php?v=300&winname=addthis&pub=ra-515ea9e8126d086c&source=tbx32-300&lng=en-us&s=google_plusone_share&url=http%3A%2F%2Fgrouphub.dev%2Fstyleguide%2Fcommunity_sponsor&title=Grouphub&ate=AT-ra-515ea9e8126d086c/-/-/5492a83d53ffb233/2&frommenu=1&uid=5492a83de2dd2faf&ct=1&tt=0&captcha_provider=nucaptcha", target="_blank", title="Google+")
+									span.at300bs.at15nc.at15t_google_plusone_share
+										span.at_a11y Share on google_plusone_share
+								a.addthis_button_email.at300b(target="_blank", title="Email", href="#")
+									span.at300bs.at15nc.at15t_email
+										span.at_a11y Share on email
+								a.addthis_counter.addthis_bubble_style(href="#", style="display: inline-block;")
+									a.addthis_button_expanded(target="_blank", title="View more services", href="#") 0
+									a.atc_s.addthis_button_compact
+										span
+								.atclear
+							script(type="text/javascript")
+								var addthis_config = {"data_track_addressbar":false};
+							script(type="text/javascript", src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-515ea9e8126d086c")
+							// AddThis Button END

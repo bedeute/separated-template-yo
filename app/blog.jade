@@ -1,0 +1,37 @@
+extends ./layout/_default.jade
+
+block content
+	.container.content
+		.row
+			.col-md-8
+				.blog-feed
+					.blog.card
+						.blog-lefty.text-right
+							.blog-timestamp
+								| 26
+								span Dec
+							.blog-author
+								span by
+								| Admin
+						.blog-head At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
+						.blog-body
+							.fb-like.fb_iframe_widget(data-href="http://developers.facebook.com/docs/reference/plugins/like", data-width="450", data-show-faces="true", data-send="true", fb-xfbml-state="rendered", fb-iframe-plugin-query="app_id=&href=http%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Freference%2Fplugins%2Flike&locale=en_US&sdk=joey&send=true&show_faces=true&width=450")
+								span(style="vertical-align: bottom; width: 450px; height: 25px;")
+									iframe(name="f2fdac9f14", width="450px", height="1000px", frameborder="0", allowtransparency="true", scrolling="no", title="fb:like Facebook Social Plugin", src="http://www.facebook.com/plugins/like.php?app_id=&channel=http%3A%2F%2Fstatic.ak.facebook.com%2Fconnect%2Fxd_arbiter%2F7r8gQb8MIqE.js%3Fversion%3D41%23cb%3Df113aa3e64%26domain%3Dgrouphub.dev%26origin%3Dhttp%253A%252F%252Fgrouphub.dev%252Ff1f141246c%26relation%3Dparent.parent&href=http%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Freference%2Fplugins%2Flike&locale=en_US&sdk=joey&send=true&show_faces=true&width=450", style="border: none; visibility: visible; width: 450px; height: 25px;")
+
+							p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+								| et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+								| aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+								| dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+								| deserunt mollit anim id est laborum
+							.embed-responsive.embed-responsive-16by9
+								iframe.embed-responsive-item(width="560" height="315" src="//www.youtube-nocookie.com/embed/FoRRybrFR0c?rel=0" allowfullscreen)
+							p You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the
+								| world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I don't know
+								| exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out.
+								| Now we took an oath, that I'm breaking now. We said we'd say it was the snow that killed the other two, but it wasn't.
+								| Nature is lethal but it doesn't hold a candle to man.
+							img(src='http://lorempixel.com/output/sports-q-c-420-340-9.jpg')
+							p You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the
+								| world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I don't know
+			.col-md-4
