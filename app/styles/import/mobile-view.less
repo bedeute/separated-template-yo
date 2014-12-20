@@ -1,5 +1,9 @@
 @media screen and (max-width: 480px) {
 
+	.content {
+		padding-top: 20px;
+	}
+
 	.header-id {
 
 		&-stats {
@@ -23,14 +27,34 @@
 				font-size: 28px;
 			}
 		}
+
+		&.affix {
+			visibility: hidden;
+		}
+
 	}
 
-	.wrp-header-cover-block {
-		height: 160px;
+	.wrp-header-cover{
+
+		&-block {
+			height: 160px;
+		}
+
+		&.affix {
+			height: 50px;
+		}
 	}
 
 	.sponsor-list-item {
 
 		width: 100%;
+	}
+
+
+	.header-nav {
+
+		&.affix {
+
+		}
 	}
 }

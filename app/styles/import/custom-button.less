@@ -38,7 +38,11 @@
 }
 
 .btn-main {
-	.button-variant-custom(@main-accent-color; @base-white; #fff);
+  .button-variant-custom(@main-accent-color; @base-white; #fff);
+  .box-shadow(0 2px 2px rgba(0, 0, 0, 0.1));
+}
+.btn-main-accent {
+	.button-variant-custom(lighten(@main-accent-color, 50%); @main-accent-color; lighten(@main-accent-color, 10%));
 	.box-shadow(0 2px 2px rgba(0, 0, 0, 0.1));
 }
 

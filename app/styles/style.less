@@ -134,7 +134,7 @@ body {
 
 	&.affix {
 		height: 150px;
-		.animation(top-bottom .4s linear);
+		.animation(top-bottom .2s linear);
 
 		& > .header-cover {
 			filter: blur(10px);
@@ -178,7 +178,7 @@ body {
 
 	&-nav {
 		position: absolute;
-		z-index: 1;
+		z-index: 2;
 		top: 14px;
 		left: 0;
 		right: 0;
@@ -620,7 +620,7 @@ body {
 	}
 
 	&-block {
-
+		margin-top: 8px;
 		&:extend(.clearfix all);
 	}
 }
@@ -628,14 +628,33 @@ body {
 // footer
 footer {
 
-	background-color: #2b2e39;
+	background-color: #0d0f15;
 	padding-top: 4px;
 	padding-bottom: 16px;
 	color: #99a0bd;
+
+	hr {
+		border-top-color: lighten(#0d0f15, 10%);
+	}
 }
 
-.footer-shoutout {
-	margin-top: 40px;
+
+
+.footer{
+
+	&-shoutout {
+		margin-top: 40px;
+	}
+
+	&-nav a,
+	&-logo a {
+		color: #99a0bd;
+	}
+
+	&-nav a:hover  {
+		color: lighten(#99a0bd, 10%);
+		text-decoration: underline;
+	}
 }
 
 .footer-latest-blog {
@@ -643,6 +662,12 @@ footer {
 	
 	&-headline {
 		color: #99a0bd;
+
+		&:hover,
+		&:focus {
+			color: lighten(#99a0bd, 10%);
+			text-decoration: underline;
+		}
 
 		& > h4 {
 			margin-bottom: 2px;
@@ -773,17 +798,18 @@ footer {
 		}
 
 		& .identity-content {
-			display: block;
 			width: 100%;
 			padding-left: 48px;
+			min-height: 50px;
 			border-bottom: 1px solid #e5e5e5;
+			padding-right: 90px;
 
 			& > a {
 				display: inline-block;
 
-				& > h3 {
+				& > h4 {
 					margin-top: 12px;
-					margin-bottom: 12px;
+					margin-bottom: 10px;
 				}
 			}
 
@@ -791,8 +817,10 @@ footer {
 				display: inline-block;
 				position: absolute;
 				right: 0;
+				width: 100px;
 				margin-right: 12px;
-				top: 18px;
+				top: 14px;
+				text-align: right;
 				text-shadow : 0 1px #fff;
 				color: #999;
 				font-size: 12px;
